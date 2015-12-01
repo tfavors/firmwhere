@@ -12,6 +12,7 @@ class Profile:
         self.binary = self.import_file(p)
         self.firmware_file_name = self.parse_filename(p)
 
+
     def parse_username(self, p_file):
         pass
 

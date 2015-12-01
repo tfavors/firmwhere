@@ -1,6 +1,5 @@
 from ftplib import FTP
 from telnetlib import Telnet
-import time
 import threading
 
 class Connection(threading.Thread):
@@ -23,7 +22,6 @@ class Connection(threading.Thread):
             self.thread_caller.thread_count += 1
             tel_conn = self.shell_connection()
             self.login(tel_conn)
-
             if self.firmware_check(tel_conn) is False:
                 ftp_conn = self.file_connection()
                 tel_conn.close()
@@ -33,18 +31,15 @@ class Connection(threading.Thread):
             self.thread_caller.thread_count -= 1
             
         def poll_cycle(self):
-
             self.thread_caller.thread_count += 1
             tel_conn = self.shell_connection()
             self.login(tel_conn)
-            
             if self.firmware_check(tel_conn) is False:
                 #update log
                 pass
             else:
                 #update log
                 pass
-            
             tel_conn.close()
             self.thread_caller.thread_count -= 1
 
