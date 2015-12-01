@@ -18,3 +18,5 @@ install python 2.7
 install wxpython3.0 32bit for python 2.7
 in terminal: >python GUI.py
 
+#Team Members
+Tyler Baker, Luke O'Quinn, David Bordelon, Travis Favors, Quin Mese, Brandon Mautz
