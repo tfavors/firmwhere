@@ -12,20 +12,13 @@ class Update:
         self.thread_count = 0
 
     def perform_update(self):
-
-        for ip in self.ip_list:
-            while self.thread_count >= 25:
-                pass
-            flag = True
-            cn = Connection(self, ip, flag)
-            cn.start()
-
+        self.iterate_over_ips(True)
         time.sleep(120)
-        
-        self.thread_count = 0
+        self.iterate_over_ips(False)
+
+    def iterate_over_ips(self, flag):
         for ip in self.ip_list:
             while self.thread_count >= 25:
                 pass
-            flag = False
             cn = Connection(self, ip, flag)
             cn.start()
