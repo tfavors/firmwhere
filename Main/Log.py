@@ -4,11 +4,14 @@ import datetime
 
 class Log:
 
-    def __init__(self):
+    def __init__(self, profile, ip_list):
+        self.ip_list = ip_list
+        self.profile = profile
         self.initial_good_firmware = 0
         self.final_good_firmware = 0
         self.initial_bad_firmware = 0
         self.final_bad_firmware = 0
+
 
 
     def ini_good_firm(self):
@@ -22,9 +25,6 @@ class Log:
 
     def fin_bad_firm(self):
         self.final_bad_firmware += 1
-
-    def profile_used(self, profile):
-        self.profile = profile
 
     def time_of_update(self):
          self.time = datetime.today()
